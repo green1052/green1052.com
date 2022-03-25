@@ -1,6 +1,5 @@
 {
   "name": "green1052.com",
-  "packageManager": "yarn@3.2.0",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build"
