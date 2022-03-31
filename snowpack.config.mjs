@@ -3,7 +3,8 @@ export default {
     mount: {
         public: "/",
         src: "/dist",
-        static: "/static"
+        static: "/static",
+        "node_modules/@fontsource/roboto/files": "/files"
     },
     plugins: [
         "@snowpack/plugin-react-refresh",
