@@ -31,10 +31,15 @@ function CustomMenuItem(props: {
     );
 }
 
-function CustomListText(props: { text: string }) {
+function CustomListText(props: { url?: string, text: string }) {
+    const openUrl = useCallback(() => {
+        if (props.url !== undefined)
+            window.open(props.url, "_blank");
+    }, [props]);
+
     return (
-        <ListItem disableGutters>
-            <ListItemText primary={props.text}/>
+        <ListItem>
+            <ListItemText onClick={openUrl} primary={props.text}/>
         </ListItem>
     );
 }
@@ -49,7 +54,8 @@ function App() {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Avatar alt="green1052" src="/static/images/avatar.webp"/>
+                        <Avatar alt="green1052" src="/images/avatar.webp"/>
+                        &nbsp;
                         &nbsp;
                         <Typography
                             variant="h6"
@@ -83,12 +89,17 @@ function App() {
                 초보 개발자 green1052입니다.
             </Typography>
 
-            <Typography pt={20} ml={15} variant="h5" sx={{fontWeight: "bold"}}>
+            <Typography pt={5} ml={15} variant="h5" sx={{fontWeight: "bold"}}>
                 지나온 길
 
+                <Typography pt={1}>
+                    클릭으로 이동할 수 있습니다.
+                </Typography>
+
+
                 <List>
-                    <CustomListText text="현 List-KR Maintainers"/>
-                    <CustomListText text="현 Saebasol 개발자"/>
+                    <CustomListText url="https://github.com/List-KR/List-KR" text="현 List-KR Maintainers"/>
+                    <CustomListText url="https://github.com/Saebasol" text="현 Saebasol 개발자"/>
                 </List>
 
                 <h6>

@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import {createTheme, ThemeProvider} from "@mui/material/styles";
+import {createRoot} from "react-dom/client";
 
 const darkTheme = createTheme({
     palette: {
@@ -9,14 +9,13 @@ const darkTheme = createTheme({
     }
 });
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
+root.render(
     <React.StrictMode>
         <ThemeProvider theme={darkTheme}>
             <App/>
         </ThemeProvider>
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
-
-// @ts-ignore
-if (import.meta.hot) import.meta.hot.accept();
