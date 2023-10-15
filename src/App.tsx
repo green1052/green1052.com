@@ -38,7 +38,11 @@ function CustomListText(props: { url?: string, text: string }) {
     }, [props]);
 
     return (
-        <ListItem>
+        <ListItem sx={{
+            ml: 5,
+            listStyleType: "disc",
+            display: "list-item"
+        }}>
             <ListItemText onClick={openUrl} primary={props.text}/>
         </ListItem>
     );
@@ -67,7 +71,7 @@ function App() {
                         </Typography>
 
                         <Box sx={{flexGrow: 1, display: {xs: "none", md: "flex"}}}>
-                            <CustomMenuItem keyValue="Github" text="Github" onClickEvent={clickOpenGithub}/>
+                            <CustomMenuItem keyValue="GitHub" text="GitHub" onClickEvent={clickOpenGithub}/>
                         </Box>
                     </Toolbar>
                 </Container>
@@ -97,14 +101,14 @@ function App() {
                 </Typography>
 
 
-                <List>
+                <List style={{cursor: "pointer"}}>
                     <CustomListText url="https://github.com/List-KR/List-KR" text="현 List-KR Maintainers"/>
                     <CustomListText url="https://github.com/Saebasol" text="현 Saebasol 개발자"/>
                 </List>
 
                 <h6>
                     <a style={{color: "black"}} href="https://github.com/green1052" target="_blank">
-                        자세한 내용은 Github를 참조해주세요
+                        자세한 내용은 GitHub를 참조해주세요
                     </a>
                 </h6>
             </Typography>
