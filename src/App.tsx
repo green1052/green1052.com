@@ -14,6 +14,7 @@ import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import {Link} from "@mui/material";
 
 function CustomMenuItem(props: {
     keyValue: string,
@@ -33,26 +34,23 @@ function CustomMenuItem(props: {
 
 function CustomListText(props: { url?: string, text: string }) {
     const openUrl = useCallback(() => {
-        if (props.url !== undefined)
+        if (props.url)
             window.open(props.url, "_blank");
     }, [props]);
 
     return (
         <ListItem sx={{
-            ml: 5,
+            mt: -1,
+            ml: 3,
             listStyleType: "disc",
             display: "list-item"
         }}>
-            <ListItemText onClick={openUrl} primary={props.text}/>
+            <ListItemText sx={{ml: -2}} onClick={openUrl} primary={props.text}/>
         </ListItem>
     );
 }
 
 function App() {
-    const clickOpenGithub = useCallback(() => {
-        window.open("https://github.com/green1052", "_blank");
-    }, []);
-
     return (
         <Box m="-8px" sx={{width: "100vw", height: "100vh"}}>
             <AppBar position="static">
@@ -71,13 +69,14 @@ function App() {
                         </Typography>
 
                         <Box sx={{flexGrow: 1, display: {xs: "none", md: "flex"}}}>
-                            <CustomMenuItem keyValue="GitHub" text="GitHub" onClickEvent={clickOpenGithub}/>
+                            <CustomMenuItem keyValue="GitHub" text="GitHub"
+                                            onClickEvent={() => window.open("https://github.com/green1052", "_blank")}/>
                         </Box>
                     </Toolbar>
                 </Container>
             </AppBar>
 
-            <Typography pt={10} align="center" variant="h2">
+            <Typography pt={10} sx={{fontWeight: "bold"}} align="center" variant="h2">
                 Hello, World!
             </Typography>
 
@@ -93,6 +92,7 @@ function App() {
                 초보 개발자 green1052입니다.
             </Typography>
 
+
             <Typography pt={5} ml={15} variant="h5" sx={{fontWeight: "bold"}}>
                 지나온 길
 
@@ -100,17 +100,16 @@ function App() {
                     클릭으로 이동할 수 있습니다.
                 </Typography>
 
-
-                <List style={{cursor: "pointer"}}>
+                <List style={{width: "fit-content", cursor: "pointer"}}>
                     <CustomListText url="https://github.com/List-KR/List-KR" text="현 List-KR Maintainers"/>
                     <CustomListText url="https://github.com/Saebasol" text="현 Saebasol 개발자"/>
                 </List>
 
-                <h6>
-                    <a style={{color: "black"}} href="https://github.com/green1052" target="_blank">
-                        자세한 내용은 GitHub를 참조해주세요
-                    </a>
-                </h6>
+
+                <Link href="https://github.com/green1052" sx={{fontWeight: "bold"}} variant="h6" color="black"
+                      underline="none" target="_blank" rel="noopener noreferrer">
+                    자세한 내용은 GitHub를 참조해주세요
+                </Link>
             </Typography>
         </Box>
     );
