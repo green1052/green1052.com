@@ -10,7 +10,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/base": "^5.0.0-alpha.97",
     "@mui/icons-material": "^5.10.3",
-    "@mui/material": "^5.10.5",
+    "@mui/material": "^5.15.21",
     "@mui/system": "^5.10.5",
     "@mui/utils": "^5.10.3",
     "@snowpack/plugin-react-refresh": "^2.5.0",
