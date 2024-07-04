@@ -11,7 +11,7 @@
     "@mui/base": "^5.0.0-alpha.97",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.5",
-    "@mui/system": "^5.10.5",
+    "@mui/system": "^5.15.20",
     "@mui/utils": "^5.10.3",
     "@snowpack/plugin-react-refresh": "^2.5.0",
     "@snowpack/plugin-typescript": "^1.2.1",
