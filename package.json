@@ -12,7 +12,7 @@
     "@mui/icons-material": "^5.16.1",
     "@mui/material": "^5.16.1",
     "@mui/system": "^5.16.1",
-    "@mui/utils": "^5.15.20",
+    "@mui/utils": "^5.16.4",
     "@snowpack/plugin-react-refresh": "^2.5.0",
     "@snowpack/plugin-typescript": "^1.2.1",
     "@types/react": "^18.3.3",
