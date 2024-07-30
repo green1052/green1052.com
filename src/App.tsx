@@ -106,8 +106,7 @@ function App() {
                 </List>
 
 
-                <Link href="https://github.com/green1052" sx={{fontWeight: "bold"}} variant="h6" color="black"
-                      underline="none" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/green1052" sx={{fontWeight: "bold"}} variant="h6" underline="none" target="_blank" rel="noopener noreferrer">
                     자세한 내용은 GitHub를 참조해주세요
                 </Link>
             </Typography>
