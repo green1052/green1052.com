@@ -29,7 +29,7 @@
     "vite": "^5.4.3"
   },
   "dependencies": {
-    "@fontsource/roboto": "^5.0.14"
+    "@fontsource/roboto": "^5.0.15"
   },
   "packageManager": "pnpm@9.9.0"
 }
