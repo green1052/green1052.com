@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fontsource/roboto':
-        specifier: ^5.0.14
-        version: 5.0.14
+        specifier: ^5.0.15
+        version: 5.0.15
     devDependencies:
       '@emotion/react':
         specifier: ^11.13.3
@@ -411,8 +411,8 @@ packages:
   '@floating-ui/utils@0.2.5':
     resolution: {integrity: sha512-sTcG+QZ6fdEUObICavU+aB3Mp8HY4n14wYHdxK4fXjPmv3PXZZeY5RaguJmGyeH/CJQhX3fqKUtS4qc1LoHwhQ==}
 
-  '@fontsource/roboto@5.0.14':
-    resolution: {integrity: sha512-zHAxlTTm9RuRn9/StwclFJChf3z9+fBrOxC3fw71htjHP1BgXNISwRjdJtAKAmMe5S2BzgpnjkQR93P9EZYI/Q==}
+  '@fontsource/roboto@5.0.15':
+    resolution: {integrity: sha512-352XiID9jfwmYaHpdmS3ocGJi3PA+vOm4HzJIRfSyPEyLP6dZN8iiEKUbdAfB5YXQO3YxO2KZpR+R28q2zMiYw==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -1401,7 +1401,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.5': {}
 
-  '@fontsource/roboto@5.0.14': {}
+  '@fontsource/roboto@5.0.15': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
