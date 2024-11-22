@@ -38,7 +38,7 @@ importers:
         version: 2.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@snowpack/plugin-typescript':
         specifier: ^1.2.1
-        version: 1.2.1(typescript@5.6.3)
+        version: 1.2.1(typescript@5.7.2)
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.12
@@ -70,8 +70,8 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       typescript:
-        specifier: ^5.6.3
-        version: 5.6.3
+        specifier: ^5.7.2
+        version: 5.7.2
       vite:
         specifier: ^5.4.11
         version: 5.4.11
@@ -993,8 +993,8 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
-  typescript@5.6.3:
-    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1592,11 +1592,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@snowpack/plugin-typescript@1.2.1(typescript@5.6.3)':
+  '@snowpack/plugin-typescript@1.2.1(typescript@5.7.2)':
     dependencies:
       execa: 5.1.1
       npm-run-path: 4.0.1
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -1961,7 +1961,7 @@ snapshots:
 
   to-fast-properties@2.0.0: {}
 
-  typescript@5.6.3: {}
+  typescript@5.7.2: {}
 
   update-browserslist-db@1.1.0(browserslist@4.23.2):
     dependencies:
