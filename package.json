@@ -31,5 +31,5 @@
   "dependencies": {
     "@fontsource/roboto": "^5.2.5"
   },
-  "packageManager": "pnpm@10.8.1"
+  "packageManager": "pnpm@10.9.0"
 }
