@@ -17,7 +17,7 @@
     "@snowpack/plugin-typescript": "^1.2.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
+    "@vitejs/plugin-react": "^5.0.1",
     "clsx": "^2.1.1",
     "object-assign": "^4.1.1",
     "prop-types": "^15.8.1",
