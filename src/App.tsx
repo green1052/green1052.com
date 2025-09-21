@@ -101,7 +101,7 @@ function App() {
                 </Typography>
 
                 <List style={{width: "fit-content", cursor: "pointer"}}>
-                    <CustomListText url="https://github.com/List-KR/List-KR" text="현 List-KR Maintainers"/>
+                    <CustomListText url="https://github.com/List-KR/List-KR" text="List-KR Maintainers"/>
                 </List>
 
 
