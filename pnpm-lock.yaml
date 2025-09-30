@@ -38,7 +38,7 @@ importers:
         version: 2.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@snowpack/plugin-typescript':
         specifier: ^1.2.1
-        version: 1.2.1(typescript@5.9.2)
+        version: 1.2.1(typescript@5.9.3)
       '@types/react':
         specifier: ^19.1.16
         version: 19.1.16
@@ -70,8 +70,8 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       typescript:
-        specifier: ^5.9.2
-        version: 5.9.2
+        specifier: ^5.9.3
+        version: 5.9.3
       vite:
         specifier: ^7.1.7
         version: 7.1.7
@@ -1119,8 +1119,8 @@ packages:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
     engines: {node: '>=12.0.0'}
 
-  typescript@5.9.2:
-    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1844,11 +1844,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@snowpack/plugin-typescript@1.2.1(typescript@5.9.2)':
+  '@snowpack/plugin-typescript@1.2.1(typescript@5.9.3)':
     dependencies:
       execa: 5.1.1
       npm-run-path: 4.0.1
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -2214,7 +2214,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
 
-  typescript@5.9.2: {}
+  typescript@5.9.3: {}
 
   update-browserslist-db@1.1.0(browserslist@4.23.2):
     dependencies:
