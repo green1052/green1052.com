@@ -26,7 +26,7 @@
     "react-is": "^19.2.5",
     "react-transition-group": "^4.4.5",
     "typescript": "^6.0.2",
-    "vite": "^8.0.7"
+    "vite": "^8.0.8"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.2.10"
