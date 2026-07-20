@@ -11,15 +11,10 @@ const server = serve({
         "/icon-192.png": staticFile("public/icon-192.png"),
         "/icon-512.png": staticFile("public/icon-512.png"),
         "/site.webmanifest": staticFile("public/site.webmanifest"),
-        // Serve index.html for all unmatched routes.
         "/*": index
     },
-
     development: process.env.NODE_ENV !== "production" && {
-        // Enable browser hot reloading in development
         hmr: true,
-
-        // Echo console logs from the browser to the server
         console: true
     }
 });
