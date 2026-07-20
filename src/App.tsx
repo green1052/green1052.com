@@ -1,115 +1,194 @@
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
+import {useEffect, useState} from "react";
+import {
+    Avatar,
+    Box,
+    Card,
+    Container,
+    Flex,
+    Grid,
+    Heading,
+    IconButton,
+    Link,
+    Section,
+    Text,
+    Theme
+} from "@radix-ui/themes";
+import {
+    SiGithub,
+    SiKotlin,
+    SiNodedotjs,
+    SiReact,
+    SiShell,
+    SiTypescript,
+    SiUblockorigin,
+    SiVuedotjs,
+    SiWxt
+} from "@icons-pack/react-simple-icons";
+import {ArrowRight, Mail, Moon, Sun} from "lucide-react";
 
-import React, {useCallback} from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import Avatar from "@mui/material/Avatar";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import {Link} from "@mui/material";
+import avatarUrl from "./assets/avatar.avif";
 
-function CustomMenuItem(props: {
-    keyValue: string,
-    text: string,
-    onClickEvent: any
-}) {
+type Appearance = "light" | "dark";
+
+const PROJECTS = [
+    {
+        name: "DCRefresher-Reborn",
+        desc: "디시인사이드 개선 확장 프로그램",
+        url: "https://github.com/green1052/DCRefresher-Reborn",
+        stars: 47,
+        icon: [SiTypescript, SiWxt, SiVuedotjs]
+    },
+    {
+        name: "maxmind-geoip2",
+        desc: "GeoIP2 데이터베이스 다운로드 도구",
+        url: "https://github.com/green1052/maxmind-geoip2",
+        stars: 10,
+        icon: [SiShell]
+    },
+    {
+        name: "betternovelpia",
+        desc: "노벨피아 개선 유저스크립트",
+        url: "https://github.com/green1052/betternovelpia",
+        stars: 8,
+        icon: [SiTypescript, SiReact]
+    },
+    {
+        name: "no-coupang-partners",
+        desc: "쿠팡 파트너스 링크만 있는 사이트 숨김",
+        url: "https://github.com/green1052/no-coupang-partners",
+        stars: 7,
+        icon: [SiUblockorigin]
+    },
+    {
+        name: "DCAdblocker",
+        desc: "디시인사이드 광고 차단",
+        url: "https://github.com/green1052/DCAdblocker",
+        stars: 7,
+        icon: [SiKotlin]
+    },
+    {
+        name: "arcalive.js",
+        desc: "arca.live 공앱 API",
+        url: "https://github.com/green1052/arcalive.js",
+        stars: 2,
+        icon: [SiNodedotjs, SiTypescript]
+    },
+    {
+        name: "dcinside.js",
+        desc: "디시인사이드 비공식 API 클라이언트",
+        url: "https://github.com/green1052/dcinside.js",
+        stars: 1,
+        icon: [SiNodedotjs, SiTypescript]
+    }
+] as const;
+
+type IconProps = { size?: number; color?: string };
+
+function LangIcons({icons, size = 12}: { icons: readonly React.FC<IconProps>[]; size?: number }) {
     return (
-        <Button
-            key={props.keyValue}
-            sx={{my: 2, color: "white", display: "block"}}
-            onClick={props.onClickEvent}
-        >
-            {props.text}
-        </Button>
-    );
-}
-
-function CustomListText(props: { url?: string, text: string }) {
-    const openUrl = useCallback(() => {
-        if (props.url)
-            window.open(props.url, "_blank");
-    }, [props]);
-
-    return (
-        <ListItem sx={{
-            mt: -1,
-            ml: 3,
-            listStyleType: "disc",
-            display: "list-item"
-        }}>
-            <ListItemText sx={{ml: -2}} onClick={openUrl} primary={props.text}/>
-        </ListItem>
+        <Flex align="center" gap="1">
+            {icons.map((Icon, i) => <Icon key={i} size={size}/>)}
+        </Flex>
     );
 }
 
 function App() {
+    const [appearance, setAppearance] = useState<Appearance>(() => {
+        if (typeof localStorage !== "undefined") {
+            const stored = localStorage.getItem("theme");
+            if (stored === "light" || stored === "dark") return stored;
+        }
+        return "dark";
+    });
+
+    useEffect(() => {
+        localStorage.setItem("theme", appearance);
+    }, [appearance]);
+
+    const toggleAppearance = () => {
+        setAppearance(prev => prev === "dark" ? "light" : "dark");
+    };
+
     return (
-        <Box m="-8px" sx={{width: "100vw", height: "100vh"}}>
-            <AppBar position="static">
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <Avatar alt="green1052" src="/images/avatar.webp"/>
-                        &nbsp;
-                        &nbsp;
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{mr: 2, display: {xs: "none", md: "flex"}}}
-                        >
-                            green1052
-                        </Typography>
-
-                        <Box sx={{flexGrow: 1, display: {xs: "none", md: "flex"}}}>
-                            <CustomMenuItem keyValue="GitHub" text="GitHub"
-                                            onClickEvent={() => window.open("https://github.com/green1052", "_blank")}/>
-                        </Box>
-                    </Toolbar>
+        <Theme appearance={appearance} accentColor="iris" grayColor="slate" radius="medium">
+            <header>
+                <Container size="3">
+                    <Flex align="center" justify="between" py="5">
+                        <Flex align="center" gap="3">
+                            <Avatar src={avatarUrl} fallback="G" size="3" radius="full"/>
+                            <Heading size="6">green1052</Heading>
+                        </Flex>
+                        <IconButton variant="ghost" highContrast onClick={toggleAppearance}
+                                    aria-label="테마 전환">
+                            {appearance === "dark" ? <Sun size={16}/> : <Moon size={16}/>}
+                        </IconButton>
+                    </Flex>
                 </Container>
-            </AppBar>
+            </header>
 
-            <Typography pt={10} sx={{fontWeight: "bold"}} align="center" variant="h2">
-                Hello, World!
-            </Typography>
+            <Section size="3">
+                <Container size="3">
+                    <Flex direction="column" align="center" gap="4">
+                        <Heading size="9">green1052</Heading>
+                        <Heading size="7" color="gray">
+                            작은 발걸음을
+                            <br/>
+                            큰 발걸음으로
+                        </Heading>
+                        <Text size="5" color="gray" align="center" style={{maxWidth: "32rem"}}>
+                            조금씩, 꾸준히.
+                        </Text>
+                    </Flex>
+                </Container>
+            </Section>
 
-            <Typography pt={5} ml={15} variant="h4" sx={{fontWeight: "bold"}}>
-                작은 발걸음을
-                <br/>
-                큰 발걸음으로
-            </Typography>
+            <Section size="3">
+                <Container size="3">
+                    <Flex direction="column" gap="4" px="6">
+                        <Heading size="6">프로젝트</Heading>
+                        <Grid columns={{initial: "1", sm: "2", md: "3"}} gap="4" width="auto">
+                            {PROJECTS.map(project => (
+                                <Card asChild key={project.name} size="2">
+                                    <a href={project.url} target="_blank" rel="noopener noreferrer"
+                                       style={{textDecoration: "none", color: "inherit"}}>
+                                        <Flex direction="column" gap="2">
+                                            <Flex justify="between" align="center">
+                                                <Heading size="4">{project.name}</Heading>
+                                                <Text size="1" color="gray">★ {project.stars}</Text>
+                                            </Flex>
+                                            <Text size="2" color="gray">{project.desc}</Text>
+                                            <LangIcons icons={project.icon}/>
+                                        </Flex>
+                                    </a>
+                                </Card>
+                            ))}
+                        </Grid>
+                        <Card asChild size="2">
+                            <a href="https://github.com/green1052" target="_blank" rel="noopener noreferrer"
+                               style={{textDecoration: "none", color: "inherit"}}>
+                                <Flex align="center" justify="center" gap="2" py="2">
+                                    <SiGithub size={16}/>
+                                    <Text size="3" weight="bold">자세한 내용은 GitHub를 참조해주세요</Text>
+                                    <ArrowRight size={16}/>
+                                </Flex>
+                            </a>
+                        </Card>
+                    </Flex>
+                </Container>
+            </Section>
 
-            <Typography pt={5} ml={15} variant="h5">
-                조금 조금씩 개발의 길에 발걸음을 내디디고 있는
-                <br/>
-                초보 개발자 green1052입니다.
-            </Typography>
+            <Container size="3">
+                <Flex direction="column" gap="3" px="6" mt="2">
+                    <Heading size="5">연락처</Heading>
+                    <Flex align="center" gap="2">
+                        <Mail size={16}/>
+                        <Link href="mailto:green1052@pm.me" size="4">green1052@pm.me</Link>
+                    </Flex>
+                </Flex>
+            </Container>
 
-
-            <Typography pt={5} ml={15} variant="h5" sx={{fontWeight: "bold"}}>
-                지나온 길
-
-                <Typography pt={1}>
-                    클릭으로 이동할 수 있습니다.
-                </Typography>
-
-                <List style={{width: "fit-content", cursor: "pointer"}}>
-                    <CustomListText url="https://github.com/List-KR/List-KR" text="List-KR Maintainers"/>
-                </List>
-
-
-                <Link href="https://github.com/green1052" sx={{fontWeight: "bold"}} variant="h6" underline="none" target="_blank" rel="noopener noreferrer">
-                    자세한 내용은 GitHub를 참조해주세요
-                </Link>
-            </Typography>
-        </Box>
+            <Box style={{height: "4rem"}}/>
+        </Theme>
     );
 }
 
